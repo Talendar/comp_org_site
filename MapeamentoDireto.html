@@ -44,6 +44,10 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -51,6 +55,9 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">Sobre</a>
                     </li>
                 </ul>
             </div>
@@ -66,7 +73,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Memória cache: Mapeamento direto</h1>
+                        <h1>Memória Cache: mapeamento direto</h1>
+                        <h2 class="subheading">A forma mais simples de atribuir um local no cache para cada palavra na memória é atribuir o local no cache com base no endereço da palavra na memória.</h2>
+                        <span class="meta">Posted by <a href="#">Daniel</a> on July 27, 2020</span>
                     </div>
                 </div>
             </div>
@@ -80,7 +89,7 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <!-- Definição -->
                     <h2 class="section-heading">O que é o mapeamento direto?</h2>
-                        <p> O mapeamento direto é o método mais simples entre as funções de mapeamento da memória cache, no qual cada bloco da memória
+                        <p align="justify"> O mapeamento direto é o método mais simples entre as funções de mapeamento da memória cache, no qual cada bloco da memória
                             memória principal é mapeado em uma posição fixa na cache, dada pela seguinte função matemática:
                         </p>
                         <h1>&emsp; &emsp; &emsp;&emsp;&emsp;&emsp;&emsp; i = j mod m</h1>
@@ -90,22 +99,22 @@
                             &emsp;<b>m</b> -> número total de blocos da cache.<br>
                             &emsp;<b>mod</b> -> Resto da divisão entre <b>j</b> e <b>m</b>.<br>      
                         </p>
-                        <p>Segue um exemplo de como fica uma parte do mapeamento de uma cache com 4 blocos e 
+                        <p align="justify">Segue um exemplo de como fica uma parte do mapeamento de uma cache com 4 blocos e 
                             uma memória principal de 16 bytes. Os blocos possuem tamanho de 1 palavra.</p>
                         <a href="#">
                             <img class="img-responsive" src="img/exemploMapeamentoDireto.PNG" alt="">
                         </a>
-                        <p>
+                        <p align="justify">
                             Se o endereço termina em 00, o bloco deve ser mapeado no index 00 da cache (j mod 4 = 0).<br>
                             Se o endereço termina em 01, o bloco deve ser mapeado no index 01 da cache (j mod 4 = 1).<br>
                             Se o endereço termina em 10, o bloco deve ser mapeado no index 10 da cache (j mod 4 = 2).<br>
                             Se o endereço termina em 11, o bloco deve ser mapeado no index 11 da cache (j mod 4 = 3).<br>
                         </p>
-                        <p> A seta em azul indica onde que os blocos da memória principal que são multiplos de 4 (resultado de j mod 4 = 0) devem ser mapeados.</p>
-                        <p> Note que os dois bits menos significativos indicam o index, já que são necessários dois bits para representar as 4 posições na memória cache.
+                        <p align="justify"> A seta em azul indica onde que os blocos da memória principal que são multiplos de 4 (resultado de j mod 4 = 0) devem ser mapeados.</p>
+                        <p align="justify"> Note que os dois bits menos significativos indicam o index, já que são necessários dois bits para representar as 4 posições na memória cache.
                             Se a cache tivesse 8 posições, seriam necessários três bits para representar o index e assim por diante 
                             (2<sup>n</sup> = m, onde n indica a quantidade bits do index). </p>
-                        <p>  No exemplo, 2<sup>n</sup> = 4, portanto n = 2. </p>
+                        <p align="justify">  No exemplo, 2<sup>n</sup> = 4, portanto n = 2. </p>
 
                     <!-- Colisão -->
                     <h2 class="section-heading">Problema de colisão</h2>
