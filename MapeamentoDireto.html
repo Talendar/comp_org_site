@@ -118,10 +118,10 @@
 
                     <!-- Colisão -->
                     <h2 class="section-heading">Problema de colisão</h2>
-                        <p>Como saber qual bloco da memória principal está ocupando determinado bloco na cache?</p>
+                        <p align="justify">Como saber qual bloco da memória principal está ocupando determinado bloco na cache?</p>
 
-                        <p>É determinado um campo no endereço chamado de TAG.</p>
-                        <p>No exemplo anterior temos os possíveis blocos que podem ocupar a posição 00 da cache: 0000, 0100, 1000 e 1100.
+                        <p align="justify">É determinado um campo no endereço chamado de TAG.</p>
+                        <p align="justify">No exemplo anterior temos os possíveis blocos que podem ocupar a posição 00 da cache: 0000, 0100, 1000 e 1100.
                             Ou seja, os dois bits menos significativos são iguais para todos (00) e os dois bits mais significativos são diferentes para todos. Assim é possível
                             utilizar esses dois bits mais significativos para identificar qual é o bloco da memória principal que ocupa o bloco da cache.
                             Esses bits recebem o nome de <b>TAG</b>. 
@@ -136,7 +136,7 @@
 
                     <!-- Campos da cache -->
                     <h2 class="section-heading">Organização da cache</h2>
-                        <p>A cache possui a seguinte estrutura:</p>
+                        <p align="justify">A cache possui a seguinte estrutura:</p>
                         <ul>
                             <li><b>Index</b>: Posição do bloco na cache.</li>
                             <li><b>Valid</b>: Indica se contém um endereço valido.</li>
@@ -146,11 +146,11 @@
                         <a href="#">
                             <img class="img-responsive" src="img/estruturaCache.PNG" alt="">
                         </a>
-                        <p>OBS: Figura representa uma cache de 4 blocos.</p>
+                        <p align="justify">OBS: Figura representa uma cache de 4 blocos.</p>
 
                     <!-- Divisão do endereço -->
                     <h2 class="section-heading">Divisão de endereço</h2>
-                        <p>O endereço é dividido em 4 campos:</p>
+                        <p align="justify">O endereço é dividido em 4 campos:</p>
                         <ul>
                             <li><b>Byte offset</b>: Deslocamento do byte dentro da palavra.</li>
                             <li><b>Word offset</b>: Deslocamento da palavra dentro do bloco.</li>
@@ -160,24 +160,24 @@
                             </li>
                             <li><b>Tag</b>: Indica qual bloco da memória principal está ocupando determinado index na cache. É representado por todo o restante do endereço.</li>
                         </ul>
-                        <p>Segue um exemplo para um endereço de 16 bits com palavra de 4 bytes, bloco de 2 palavras e uma cache de 16 blocos.</p>
+                        <p align="justify">Segue um exemplo para um endereço de 16 bits com palavra de 4 bytes, bloco de 2 palavras e uma cache de 16 blocos.</p>
                         <a href="#">
                             <img class="img-responsive" src="img/camposEndereco.PNG" alt="">
                         </a>
 
                     <!-- Implementação -->    
                     <h2 class="section-heading">Como isso é implementado</h2>
-                        <p>Exemplo do uso de mapeamento direto em uma cache de 1024 blocos, com uma memória primária de 32 bits 
+                        <p align="justify">Exemplo do uso de mapeamento direto em uma cache de 1024 blocos, com uma memória primária de 32 bits 
                             com palavra de 4 bytes e blocos de 1 palavra.
                         </p>
                         <a href="#">
                             <img class="img-responsive" src="img/exemploCacheMapeamentoDireto.PNG" alt="">
                         </a>
-                        <p>A porta AND indica se houve ou não acerto. Se o index for válido e a TAG presente nesse index for igual a TAG presento no endereço,
+                        <p align="justify">A porta AND indica se houve ou não acerto. Se o index for válido e a TAG presente nesse index for igual a TAG presento no endereço,
                             é emitido um sinal que houve um acerto. Sempre vai emitir que houve uma falha de acerto se esse index não for válido ou se
                             a TAG presente na cache não coincidir com a TAG presente no endereço.
                         </p>
-                        <p>Figura retirada do livro <i>Computer Organization and Design: The Hardware/Software Interface by David A Patterson John L Hennessy and John L. Hennessy</i> 
+                        <p align="justify">Figura retirada do livro <i>Computer Organization and Design: The Hardware/Software Interface by David A Patterson John L Hennessy and John L. Hennessy</i> 
                             , página 389.</p>
                     <!-- Vantagens -->            
                     <h2 class="section-heading">Vantagens</h2>
@@ -189,12 +189,7 @@
 
                     <!-- Desvantagens -->
                     <h2 class="section-heading">Desvantagens</h2>
-                        <p>Cada bloco da memória é mapeado em uma posição fixa na cache.<br>
-                            &emsp; Assim, pode acontecer de blocos que são mapeados na mesma posição na cache serem
-                            requesitados várias vezes seguidas, com isso, esses blocos terão que ser retirados e
-                            inseridos na cache várias vezes seguidas, o que não é eficiente, já que ocorrerá
-                            uma quantidade elevada de miss hit, gerando uma taxa alta de falha.
-                        </p>
+                        <p align="justify">Cada bloco da memória é mapeado em uma posição fixa na cache. Assim, pode acontecer de blocos que são mapeados na mesma posição na cache serem requesitados várias vezes seguidas, com isso, esses blocos terão que ser retirados e inseridos na cache várias vezes seguidas, o que não é eficiente, já que ocorrerá uma quantidade elevada de miss hit, gerando uma taxa alta de falha.</p>
                 </div>
             </div>
         </div>
