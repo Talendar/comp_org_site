@@ -44,6 +44,10 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -51,6 +55,9 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">Sobre</a>
                     </li>
                 </ul>
             </div>
@@ -66,7 +73,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Memória cache: Mapeamento associativo</h1>
+                        <h1>Memória Cache: mapeamento associativo</h1>
+                        <h2 class="subheading">O mapeamento associativo busca minimizar o problema da taxa de colisão do mapeamento direto.</h2>
+                        <span class="meta">Posted by <a href="#">Matheus</a> on July 27, 2020</span>
                     </div>
                 </div>
             </div>
@@ -80,22 +89,22 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <!-- Definição -->
                     <h2 class="section-heading">O que é?</h2>
-                        <p> O mapeamento associativo é uma forma de mapeamento da memória cache que busca minimizar o problema do mapeamento direto que é a taxa de colisão de dados.
+                        <p align="justify"> O mapeamento associativo é uma forma de mapeamento da memória cache que busca minimizar o problema do mapeamento direto que é a taxa de colisão de dados.
                             Para minimizar esse problema cada bloco de memória pode ser carregado em qualquer linha da cache, sem haver uma posição
                             específica para cada endereço, diferente do mapeamento direto que segue uma fórmula.
                             Cada linha tem uma tag que informa qual bloco de memória está carregado na linha.                            
                         </p>
-                        <p>Segue um esquema mostrando que um bloco de memória pode ocupar qualquer posição da cache:</p>
+                        <p align="justify">Segue um esquema mostrando que um bloco de memória pode ocupar qualquer posição da cache:</p>
                         <a href="#">
                             <img class="img-responsive" src="img/posAssociativoExemplo.png" alt="">
                         </a>
 
                     <!-- Organização -->
                     <h2 class="section-heading">Organização</h2>
-                        <p>Pelo modo que os blocos são organizados na cache, a organização do endereço no mapeamento associativo é quase igual ao do mapeamento direto,
+                        <p align="justify">Pelo modo que os blocos são organizados na cache, a organização do endereço no mapeamento associativo é quase igual ao do mapeamento direto,
                             diferindo apenas que no mapeamento associativo não há a necessidade de haver o index, apenas há o Byte offset, Word offset e a Tag.
                         </p>
-                        <p>Portanto o endereço segue a seguinte estrutura:</p>
+                        <p align="justify">Portanto o endereço segue a seguinte estrutura:</p>
                         <ul>
                             <li><b>Byte offset</b>: É usado quando há mais de um byte por palavra.</li>
                             <li><b>Word offset</b>: É usado quando há mais de uma palavra por bloco.</li>
@@ -104,31 +113,31 @@
 
                     <!-- Vantagens -->            
                     <h2 class="section-heading">Vantagens</h2>
-                        <p>O mapeamento associativo é mais eficiente que o mapeamento direto na alocação de blocos na memória cache, pois os dados são colocados
+                        <p align="justify">O mapeamento associativo é mais eficiente que o mapeamento direto na alocação de blocos na memória cache, pois os dados são colocados
                             no primeiro bloco livre não havendo colisão de dados, fazendo com que os endereços mais utilizados estejam na cache a maioria das vezes.
                         </p>
-                        <p> Para visualizar melhor vamos considerar a seguinte cache de 8 blocos, organizada com mapeamento direto:</p>
+                        <p align="justify"> Para visualizar melhor vamos considerar a seguinte cache de 8 blocos, organizada com mapeamento direto:</p>
                         <a href="#">
                             <img class="img-responsive" src="img/cacheAssociativoExemplo.png" alt="">
                         </a>
                         <p>Se os endereços mais utilizados pela CPU forem os endereços 00001, 10001 e 11001 o mapeamento direto mostra-se 
                             ineficiente visto que os endereços mais utilizados estão sempre colidindo e apenas 1 consegue ficar na memória cache de uma vez.</p>
-                        <p> Já no mapeamento associativo todos os endereços citados no exemplo conseguem ficar na memória
+                        <p align="justify"> Já no mapeamento associativo todos os endereços citados no exemplo conseguem ficar na memória
                             cache de uma vez, logo o mapeamento associativo tem uma maior taxa de hit.
                         </p>
 
                     <!-- Desvantagens -->
                     <h2 class="section-heading">Desvantagens</h2>
-                        <p>Como um endereço pode ocupar qualquer posição da memória cache, a busca por um bloco
+                        <p align="justify">Como um endereço pode ocupar qualquer posição da memória cache, a busca por um bloco
                             específico é prejudicada, visto que para determinar se um bloco já está na cache, as tags de todas as
                             linhas são consultadas simultaneamente.
                         </p>
-                        <p> Observe no esquema abaixo que para verificar se um bloco está na memória cache é
+                        <p align="justify"> Observe no esquema abaixo que para verificar se um bloco está na memória cache é
                             necessário verificar a tag de todas as linhas da memória cache:</p>
                         <a href="#">
                             <img class="img-responsive" src="img/AssociativoCircuitoExemplo.png" alt="">
                         </a>
-                        <p>Desta maneira o circuito para possibilitar a consulta de todas as tags em paralelo é
+                        <p align="justify">Desta maneira o circuito para possibilitar a consulta de todas as tags em paralelo é
                             muito custoso fazendo esse tipo de mapeamento ser eficiente apenas em caches pequenas.</p>
                 </div>
             </div>
